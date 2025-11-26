@@ -110,9 +110,10 @@ canvas{
 }
 header {
   height: 100px;
-  z-index: 10;
+  z-index: 999;
   width: 100%;
-
+  position: fixed;
+  
   .wrapper {
     height: 100%;
     display: flex;
@@ -166,7 +167,7 @@ header {
 .menu{ width:50px; }
 
 .main-content{
-  display:flex; flex-direction:column; align-items:center; z-index:5;
+  display:flex; flex-direction:column; align-items:center; z-index:5; padding-top: 100px;
 }
 .main-content h1{
   font-family: 'ReperipointOblique'; font-size:22rem; font-weight:600; color:#000; margin-top:7vh; z-index:5;

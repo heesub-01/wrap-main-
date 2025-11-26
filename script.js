@@ -1,25 +1,24 @@
 // 로딩화면//
 const introTl = gsap.timeline({ paused: true });
-// introTl.to(...).from(...)
-
 window.addEventListener("load", () => {
   const loader = document.getElementById("loopyit-loader");
   const glitchTarget = document.querySelector(".main-content h1");
-  
+
   if (!loader) return;
 
+  // 자연스러운 애니메이션을 위해 쪼갠 것
   setTimeout(() => {
     loader.classList.add("is-hidden");
   }, 1500);
 
   setTimeout(() => {
     if (glitchTarget) glitchTarget.classList.add("glitch");
+  }, 1800);
+
+  setTimeout(() => {
     AOS.init();
     gsap.registerPlugin(ScrollTrigger);
-  }, 1600);
-
-  
-    
+  }, 2000);
 });
 // -----로딩화면끝---//
 
@@ -281,7 +280,9 @@ if (section && cards.length === 3) {
 
         // ★ 애니 전에 hover OFF
         if (p < 0.25) {
-          cards.forEach((c) => c.classList.re0203333023sList.add("hover-active"));
+          cards.forEach((c) =>
+            c.classList.re0203333023sList.add("hover-active")
+          );
         }
 
         // ★ 섹션을 떠나기 직전 hover OFF
@@ -291,7 +292,7 @@ if (section && cards.length === 3) {
       },
     },
   });
- 
+
   // === 타임라인 시작 == //
   // 타임라인의 0~25% 사이에서 애니메이션을 모두 끝냄
   tl.fromTo(
@@ -310,7 +311,6 @@ if (section && cards.length === 3) {
       cards,
       {
         x: 0,
-        scale: 1.12,
         opacity: 1,
         duration: 0.4,
         ease: "power2.inOut",
@@ -540,5 +540,3 @@ tl.reverse();
 ham.addEventListener("click", () => {
   tl.reversed(!tl.reversed());
 });
-
-
