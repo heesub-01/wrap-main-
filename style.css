@@ -106,7 +106,7 @@ canvas{
 
 /* 섹션 1 (메인) */
 .main-section{
-  position: relative; width:100%; height:100vh; background:#fff; overflow:hidden;
+  position: relative; width:100%; height:100vh; background:#fff;
 }
 header {
   height: 100px;
@@ -117,6 +117,7 @@ header {
     height: 100%;
     display: flex;
     padding-top: 20px;
+    padding-right: 20px;
   }
 
   .logo {
@@ -165,11 +166,10 @@ header {
 .menu{ width:50px; }
 
 .main-content{
-  position:relative; display:flex; flex-direction:column; align-items:center;
-  padding-top:50px; z-index:5;
+  display:flex; flex-direction:column; align-items:center; z-index:5;
 }
 .main-content h1{
-  font-size:27rem; font-weight:600; color:#000; margin-top:7vh; z-index:5;
+  font-family: 'ReperipointOblique'; font-size:22rem; font-weight:600; color:#000; margin-top:7vh; z-index:5;
 }
 
 /* 글리치 */
@@ -179,7 +179,7 @@ header {
   color: #fff;
   letter-spacing: 2px;
   text-transform: uppercase;
-  animation: glitch-jitter 2s ease-in-out 1;
+  animation: glitch-jitter 3s ease-in-out 1;
 }
 
 .glitch::before,
@@ -602,9 +602,20 @@ body.scrolled-3 .sec_3_main_title p{ color:#fff; opacity:.5; }
   /* 처음에는 보이도록 */
 }
 
-/* 로딩이 사라질 때 쓸 클래스 */
+#loopyit-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #000;
+  transition: height 0.4s ease;
+}
+
 #loopyit-loader.is-hidden {
-  opacity: 0;
+  height: 0;
+  overflow: hidden;
   pointer-events: none;
 }
 
@@ -702,20 +713,3 @@ body.scrolled-3 .sec_3_main_title p{ color:#fff; opacity:.5; }
   from { transform: rotateY(0); }
   to   { transform: rotateY(360deg); }
 }
-
-/* 로딩제어 */
-html.loading * {
-  animation-play-state: paused !important;
-  transition: none !important;
-}
-html.loading .aos-init {
-  opacity: 0 !important;
-}
-
-html.loading #loopyit-loader *,
-html.loading #loopyit-loader {
-  animation-play-state: running !important;
-  transition: initial !important;
-}
-
-/* 로딩제어끝 */

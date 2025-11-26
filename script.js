@@ -1,10 +1,33 @@
+// 로딩화면//
+const introTl = gsap.timeline({ paused: true });
+// introTl.to(...).from(...)
+
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loopyit-loader");
+  const glitchTarget = document.querySelector(".main-content h1");
+  
+  if (!loader) return;
+
+  setTimeout(() => {
+    loader.classList.add("is-hidden");
+  }, 1500);
+
+  setTimeout(() => {
+    if (glitchTarget) glitchTarget.classList.add("glitch");
+    AOS.init();
+    gsap.registerPlugin(ScrollTrigger);
+  }, 1600);
+
+  
+    
+});
+// -----로딩화면끝---//
+
 /* ============================================================
    LOOPYIT | Full Script (인트로 + 기능 + 카드)
 ============================================================ */
 
 // ✅ 공통 초기화
-AOS.init();
-gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================================
    [1] 인트로 / 마우스 트레일 / 스크롤 인터랙션
@@ -258,12 +281,7 @@ if (section && cards.length === 3) {
 
         // ★ 애니 전에 hover OFF
         if (p < 0.25) {
-          cards.forEach((c) => c.classList.remove("hover-active"));
-        }
-
-        // ★ 애니 끝난 직후 바로 hover ON (빠르게!)
-        if (p >= 0.25 && p < 0.99) {
-          cards.forEach((c) => c.classList.add("hover-active"));
+          cards.forEach((c) => c.classList.re0203333023sList.add("hover-active"));
         }
 
         // ★ 섹션을 떠나기 직전 hover OFF
@@ -273,7 +291,7 @@ if (section && cards.length === 3) {
       },
     },
   });
-
+ 
   // === 타임라인 시작 == //
   // 타임라인의 0~25% 사이에서 애니메이션을 모두 끝냄
   tl.fromTo(
@@ -523,18 +541,4 @@ ham.addEventListener("click", () => {
   tl.reversed(!tl.reversed());
 });
 
-// 로딩화면//
-window.addEventListener("load", function () {
-  const loader = document.getElementById("loopyit-loader");
-  if (!loader) return;
 
-  setTimeout(() => {
-    loader.classList.add("is-hidden");
-  }, 1500);
-
-  // 🔥 로딩이 끝날 때 모든 애니메이션 잠금 해제
-  setTimeout(() => {
-    document.documentElement.classList.remove("loading");
-  }, 1800);
-});
-// -----로딩화면끝---//
