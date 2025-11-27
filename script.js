@@ -1,6 +1,3 @@
-AOS.init();
-gsap.registerPlugin(ScrollTrigger);
-
 // 로딩화면//
 const introTl = gsap.timeline({ paused: true });
 window.addEventListener("load", () => {
@@ -15,7 +12,7 @@ window.addEventListener("load", () => {
   }, 1500);
 
   setTimeout(() => {
-    if (glitchTarget) glitchTarget.classList.add("glitch");
+    if (glitchTarget) glitchTarget.classList.add("glitch");    
   }, 1800);
 
   setTimeout(() => {
@@ -283,9 +280,12 @@ if (section && cards.length === 3) {
 
         // ★ 애니 전에 hover OFF
         if (p < 0.25) {
-          cards.forEach((c) =>
-            c.classList.re0203333023sList.add("hover-active")
-          );
+          cards.forEach((c) => c.classList.remove("hover-active"));
+        }
+
+        // ★ 애니 끝난 직후 바로 hover ON (빠르게!)
+        if (p >= 0.25 && p < 0.99) {
+          cards.forEach((c) => c.classList.add("hover-active"));
         }
 
         // ★ 섹션을 떠나기 직전 hover OFF

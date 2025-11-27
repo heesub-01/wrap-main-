@@ -516,28 +516,85 @@ body.scrolled-3 .sec_3_main_title p{ color:#fff; opacity:.5; }
   transition: background-color 1s;
 }
 
+/* 리뷰섹션 타이틀 */
+.review-title {
+  color: #fff;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-main-title {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.review-sub-title {
+  font-size: 20px;
+  font-weight: 200;
+  margin-top: 20px;
+}
+
 /* 카드 스와이퍼 전용 클래스 */
 .reviewSwiper {
-  width: 260px;
-  height: 340px;
+  width: 400px;
+  height: 500px;
+  margin-top: 150px;
 }
 
 .reviewSwiper .swiper-slide {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 18px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
+  text-align: center;
+  border-radius: 18px;  
+  color: #000;
+  background-color: #fff;
+  gap: 20px;
 }
 
+.review-img {
+  width: 100px;
+  height: 100px;
+  background-color: #00ff50;
+  border-radius: 50PX;
+}
+
+.review-name {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-name span:nth-child(1) {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.review-name span:nth-child(2) {
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.review-text {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+
 /* 데모 색상 그대로 */
-.reviewSwiper .swiper-slide:nth-child(1n) { background: rgb(206,17,17); }
+/* .reviewSwiper .swiper-slide:nth-child(1n) { background: rgb(206,17,17); }
 .reviewSwiper .swiper-slide:nth-child(2n) { background: rgb(0,140,255); }
 .reviewSwiper .swiper-slide:nth-child(3n) { background: rgb(10,184,111); }
 .reviewSwiper .swiper-slide:nth-child(4n) { background: rgb(211,122,7); }
-.reviewSwiper .swiper-slide:nth-child(5n) { background: rgb(118,163,12); }
+.reviewSwiper .swiper-slide:nth-child(5n) { background: rgb(118,163,12); } */
 
 
 /* --------- 예빈 3st section --------- */
